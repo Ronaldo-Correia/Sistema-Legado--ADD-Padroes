@@ -1,7 +1,7 @@
 package SistemaSensoresLegado;
 
 public class SensorLuminosidade implements Sensor {
-    
+
     private static SensorLuminosidade instancia;
 
     private SensorLuminosidade() {}
@@ -12,6 +12,7 @@ public class SensorLuminosidade implements Sensor {
         }
         return instancia;
     }
+    
     @Override
     public String getTipo() {
         return "Luminosidade";

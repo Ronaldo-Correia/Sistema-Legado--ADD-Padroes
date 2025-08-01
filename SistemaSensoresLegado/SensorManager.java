@@ -9,7 +9,6 @@ public class SensorManager {
         Sensor sensor = fabrica.criarSensor();
         sensores.add(sensor);
     }
-
     public void exibirDados(Display display) {
         for (Sensor sensor : sensores) {
             display.mostrarDados(sensor.getTipo(), sensor.lerValor());

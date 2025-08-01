@@ -11,7 +11,6 @@ public class SensorTemperatura implements Sensor {
         }
         return instancia;
     }
-
     public String getTipo() {
         return "Temperatura";
     }
@@ -23,5 +22,5 @@ public class SensorTemperatura implements Sensor {
     private double lerTemperatura() {
         return 36.5;
     }
-    
+
 }
