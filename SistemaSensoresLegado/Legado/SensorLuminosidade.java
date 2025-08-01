@@ -1,4 +1,6 @@
-package SistemaSensoresLegado;
+package SistemaSensoresLegado.Legado;
+import SistemaSensoresLegado.Sensor.Sensor;
+
 
 public class SensorLuminosidade implements Sensor {
 

@@ -1,4 +1,4 @@
-package SistemaSensoresLegado;
+package SistemaSensoresLegado.Sensor;
 
 public interface Sensor {
 

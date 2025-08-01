@@ -1,4 +1,6 @@
-package SistemaSensoresLegado;
+package SistemaSensoresLegado.Legado;
+import SistemaSensoresLegado.Sensor.Sensor;
+
 
 public class SensorUmidade implements Sensor {
     private static SensorUmidade instancia;

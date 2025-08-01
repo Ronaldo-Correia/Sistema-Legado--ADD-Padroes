@@ -1,4 +1,4 @@
-package SistemaSensoresLegado;
+package SistemaSensoresLegado.Display;
 
 
 public class DisplayConsole implements Display {

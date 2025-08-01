@@ -1,4 +1,11 @@
 package SistemaSensoresLegado;
+import SistemaSensoresLegado.Display.DisplayConsole;
+import SistemaSensoresLegado.Factory.SensorLuminosidadeFactory;
+import SistemaSensoresLegado.Factory.SensorTemperaturaFactory;
+import SistemaSensoresLegado.Factory.SensorUmidadeFactory;
+import SistemaSensoresLegado.Manager.SensorManager;
+import SistemaSensoresLegado.Display.Display;
+import SistemaSensoresLegado.Sensor.Sensor;
 
 
 public class Main {

@@ -1,5 +1,6 @@
-package SistemaSensoresLegado;
+package SistemaSensoresLegado.Legado;
 
+import SistemaSensoresLegado.Sensor.Sensor;
 public class SensorTemperatura implements Sensor {
     private static SensorTemperatura instancia;
 
@@ -20,7 +21,7 @@ public class SensorTemperatura implements Sensor {
     }
 
     private double lerTemperatura() {
-        return 36.5;
+        return 80;
     }
 
 }
