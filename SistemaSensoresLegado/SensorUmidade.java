@@ -11,7 +11,6 @@ public class SensorUmidade implements Sensor {
         }
         return instancia;
     }
-
     @Override
     public String getTipo() {
         return "Umidade";
@@ -23,7 +22,6 @@ public class SensorUmidade implements Sensor {
     }
 
     private double lerUmidade() {
-        // Simula leitura de umidade
         return 72.3;
     }
 }

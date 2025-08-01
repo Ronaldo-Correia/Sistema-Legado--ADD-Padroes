@@ -15,5 +15,6 @@ public class SensorManager {
             display.mostrarDados(sensor.getTipo(), sensor.lerValor());
         }
     }
+
 }
 

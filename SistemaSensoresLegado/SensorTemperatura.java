@@ -23,4 +23,5 @@ public class SensorTemperatura implements Sensor {
     private double lerTemperatura() {
         return 36.5;
     }
+    
 }
