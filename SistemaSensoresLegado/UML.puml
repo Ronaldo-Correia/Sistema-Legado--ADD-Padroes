@@ -1,0 +1,99 @@
+@startuml SistemaSensoresLegado
+
+package Sensor {
+    interface Sensor {
+        + String lerValor()
+        + String getTipo()
+    }
+}
+
+package Factory {
+    abstract class SensorFactory {
+        + Sensor criarSensor()
+    }
+    class SensorLuminosidadeFactory
+    class SensorTemperaturaFactory
+    class SensorUmidadeFactory
+    SensorFactory <|-- SensorLuminosidadeFactory
+    SensorFactory <|-- SensorTemperaturaFactory
+    SensorFactory <|-- SensorUmidadeFactory
+}
+
+package Legado {
+    class SensorLuminosidade
+    class SensorTemperatura
+    class SensorUmidade
+    SensorLuminosidade ..|> Sensor
+    SensorTemperatura ..|> Sensor
+    SensorUmidade ..|> Sensor
+}
+
+package Adaptor {
+    class SensorAdapterFactory {
+        + Sensor criarAdapter(Object sensorLegado)
+        + Sensor criarAdapterLuminosidade()
+        + Sensor criarAdapterTemperatura()
+        + Sensor criarAdapterUmidade()
+    }
+    class SensorAdapter
+    class SensorLuminosidadeAdapter
+    class SensorTemperaturaAdapter
+    class SensorUmidadeAdapter
+
+    SensorAdapterFactory --> SensorAdapter
+    SensorAdapter ..|> Sensor
+    SensorLuminosidadeAdapter ..|> Sensor
+    SensorTemperaturaAdapter ..|> Sensor
+    SensorUmidadeAdapter ..|> Sensor
+
+    SensorAdapter --> SensorLuminosidade
+    SensorAdapter --> SensorTemperatura
+    SensorAdapter --> SensorUmidade
+
+    SensorLuminosidadeAdapter --> SensorLuminosidade
+    SensorTemperaturaAdapter --> SensorTemperatura
+    SensorUmidadeAdapter --> SensorUmidade
+}
+
+package Decorator {
+    class SensorDecorator
+    class Log
+    class Formatacao
+    class VerificarLimite
+
+    SensorDecorator ..|> Sensor
+    Log --|> SensorDecorator
+    Formatacao --|> SensorDecorator
+    VerificarLimite --|> SensorDecorator
+}
+
+package Manager {
+    class SensorManager {
+        + void adicionarSensor(SensorFactory fabrica)
+        + void adicionarSensorLuminosidadeLegado()
+        + void adicionarSensorTemperaturaLegado()
+        + void adicionarSensorUmidadeLegado()
+        + void exibirDados(Display display)
+    }
+    SensorManager --> SensorFactory
+    SensorManager --> Sensor
+}
+
+package Display {
+    interface Display {
+        + void mostrarDados(String tipo, String valor)
+    }
+    class DisplayConsole
+    DisplayConsole ..|> Display
+}
+
+Main --> SensorManager
+SensorManager --> Display
+SensorManager --> Log
+SensorManager --> Formatacao
+SensorManager --> VerificarLimite
+SensorManager --> SensorLuminosidadeAdapter
+SensorManager --> SensorTemperaturaAdapter
+SensorManager --> SensorUmidadeAdapter
+
+@enduml
