@@ -5,9 +5,6 @@ import SistemaSensoresLegado.Legado.SensorLuminosidade;
 import SistemaSensoresLegado.Legado.SensorTemperatura;
 import SistemaSensoresLegado.Legado.SensorUmidade;
 
-/**
- * Fábrica para criar Adapters de sensores legados.
- */
 public class SensorAdapterFactory {
     public static Sensor criarAdapter(Object sensorLegado) {
         return new SensorAdapter(sensorLegado);

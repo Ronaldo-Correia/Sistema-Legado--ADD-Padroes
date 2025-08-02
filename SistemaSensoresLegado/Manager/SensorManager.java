@@ -21,7 +21,6 @@ public class SensorManager {
     public void adicionarSensor(SensorFactory fabrica) {
         Sensor sensor = fabrica.criarSensor();
         
-        // Aplica os decoradores conforme o tipo do sensor
         sensor = new Log(sensor);
         sensor = new Formatacao(sensor);
 
@@ -32,7 +31,6 @@ public class SensorManager {
         sensores.add(sensor);
     }
 
-    // Adiciona sensor legado de luminosidade
     public void adicionarSensorLuminosidadeLegado() {
         Sensor sensor = new SensorLuminosidadeAdapter(SensorLuminosidade.getInstance());
         sensor = new Log(sensor);
@@ -40,7 +38,6 @@ public class SensorManager {
         sensores.add(sensor);
     }
 
-    // Adiciona sensor legado de temperatura
     public void adicionarSensorTemperaturaLegado() {
         Sensor sensor = new SensorTemperaturaAdapter(SensorTemperatura.getInstance());
         sensor = new Log(sensor);
@@ -49,7 +46,6 @@ public class SensorManager {
         sensores.add(sensor);
     }
 
-    // Adiciona sensor legado de umidade
     public void adicionarSensorUmidadeLegado() {
         Sensor sensor = new SensorUmidadeAdapter(SensorUmidade.getInstance());
         sensor = new Log(sensor);

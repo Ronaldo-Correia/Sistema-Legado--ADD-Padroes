@@ -2,9 +2,7 @@ package SistemaSensoresLegado.Adaptor;
 
 import SistemaSensoresLegado.Sensor.Sensor;
 
-/**
- * Adapter para sensores legados, permitindo que sejam usados no novo sistema modular.
- */
+
 public class SensorAdapter implements Sensor {
     private Object sensorLegado;
 
@@ -14,7 +12,6 @@ public class SensorAdapter implements Sensor {
 
     @Override
     public String lerValor() {
-        // Chama o método correto do sensor legado
         if (sensorLegado instanceof SistemaSensoresLegado.Legado.SensorLuminosidade) {
             return ((SistemaSensoresLegado.Legado.SensorLuminosidade) sensorLegado).lerValor();
         } else if (sensorLegado instanceof SistemaSensoresLegado.Legado.SensorTemperatura) {
